@@ -1,5 +1,5 @@
 {
-    "name": "Card to display bar chart oriented to display power sensors",
+    "name": "dfanica",
     "render_readme": true,
     "filename": "ha-tdv-bar.js",
     "content_in_root": true
