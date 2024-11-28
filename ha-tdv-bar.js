@@ -5,6 +5,8 @@ console.info("%c v1.2.3 %c TDV-BAR-CARD ", "color: #000000; background:#ffa600 ;
 //const css = LitElement.prototype.css;
 //debugger
 
+console.log("This file was modified from the original!!!");
+
 class TDVBarCard extends HTMLElement
  {
 //#################################################################################################  
@@ -367,7 +369,8 @@ class TDVBarCard extends HTMLElement
          } break
        } 
      }
-    return data;
+    // return data;
+    return Number(data.toFixed(2));
    }
 //#################################################################################################
   _fire(type, detail, options)
@@ -722,7 +725,9 @@ class TDVBarCard extends HTMLElement
     if(Number(entity.d)!=0)
      {
       // Form a string with the current value
-      let curvalstr=Number(entity.d.toFixed(entity.pr))+" "+entity.m;
+      // let curvalstr=Number(entity.d.toFixed(entity.pr))+" "+entity.m;
+      let curvalstr = Number(entity.d.toFixed(2)) + " " + entity.m;
+
       valstrwidth=this.ctx.measureText(curvalstr).width;
       this.ctx.fillStyle=this.colors.name;
       this.ctx.textAlign="end"; 
@@ -758,7 +763,8 @@ class TDVBarCard extends HTMLElement
         default:    curvalstr="⇑ ";break;
        }  
 
-      curvalstr+=Number(trval.toFixed(entity.pr))+" "+entity.m+" / ";
+      // curvalstr+=Number(trval.toFixed(entity.pr))+" "+entity.m+" / ";
+      curvalstr+=Number(trval.toFixed(2))+" "+entity.m+" / ";
       tvalstrwidth=this.ctx.measureText(curvalstr).width;
       this.ctx.fillStyle=this.colors.chart_fg;
       this.ctx.textAlign="end"; 
